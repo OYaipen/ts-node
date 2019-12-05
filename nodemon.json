@@ -1,0 +1,10 @@
+{
+    "ignore": [
+        "node_modules",
+        ".git",
+        "**/*.tes.ts",
+        "**/*.spec.ts"
+    ],
+    "ext": "ts",
+    "exec": "npm run dev"
+}
