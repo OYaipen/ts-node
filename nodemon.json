@@ -5,6 +5,9 @@
         "**/*.tes.ts",
         "**/*.spec.ts"
     ],
+    "watch": [
+        "src"
+    ],
     "ext": "ts",
     "exec": "npm run dev"
 }

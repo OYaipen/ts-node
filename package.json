@@ -6,9 +6,7 @@
   "scripts": {
     "clean": "rimraf ./dist",
     "dev": "ts-node src/index.ts",
-    "public": "ncp .public/ ./dist/public/",
-    "hbscopy": "ncp .views/ ./dist/views/",
-    "build": "npm run clean && tsc && npm run hbscopy && npm run public",
+    "build": "npm run clean && tsc",
     "start": "node dist/index.js"
   },
   "author": "owen yaipen",
@@ -31,7 +29,6 @@
     "@types/mongoose": "^5.5.32",
     "@types/morgan": "^1.7.37",
     "@types/passport": "^1.0.2",
-    "ncp": "^2.0.0",
     "nodemon": "^2.0.1",
     "rimraf": "^3.0.0",
     "ts-node": "^8.5.4",
