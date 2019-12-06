@@ -3,7 +3,8 @@ import morgan from 'morgan';
 import cors from 'cors';
 import passport from 'passport';
 import path from 'path';
-import controllers from '../controllers';
+
+import indexRoutes from '../routes'
 
 class Server {
     public app: Application;
@@ -11,14 +12,13 @@ class Server {
         this.app = express();
         this.settings();
         this.middlewares();
-        this.controllers()
         this.routes();
     }
     settings(): void {
         this.app.set('port', process.env.PORT || 5000);
         this.app.use(passport.initialize());
         this.app.use(passport.session())
-        this.app.use(express.static(path.join(__dirname, 'public')));
+        this.app.use('/uploads', express.static(path.resolve('uploads')));
     }
     middlewares(): void {
         this.app.use(cors());
@@ -26,15 +26,8 @@ class Server {
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: false }));
     }
-    controllers(): void {
-        this.app.use(controllers);
-    }
     routes(): void {
-        this.app.use('/', (req, res) => {
-            return res.json({
-                message: "This is the base server of node.js"
-            });
-        });
+        this.app.use('/api', indexRoutes);
     }
     start(): void {
         this.app.listen(this.app.get('port'), () => {
