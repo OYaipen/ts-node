@@ -4,8 +4,7 @@ import cors from 'cors';
 import passport from 'passport';
 import path from 'path';
 
-import indexRoutes from '../routes'
-
+import indexRoutes from '../routes/index'
 class Server {
     public app: Application;
     constructor() {

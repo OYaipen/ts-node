@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist/ uploads/",
     "build": "npm run clean && tsc",
-    "start": "npm rn build && node dist/index.js",
+    "start": "npm run build && node dist/index.js",
     "dev": "nodemon src/index.ts"
   },
   "author": "owen yaipen",

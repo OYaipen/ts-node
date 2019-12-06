@@ -1,4 +1,3 @@
-
 import { Request, Response } from 'express'
 import path from 'path'
 import fs from "fs-extra";
@@ -41,7 +40,7 @@ export async function updatePhoto(req: Request, res: Response): Promise<Response
     const updatedPhoto = await Photo.findByIdAndUpdate(id, {
         title,
         description
-    });
+    }, { new: true }) as IPhoto;
     return res.json({
         message: 'Successfully updated',
         updatedPhoto
