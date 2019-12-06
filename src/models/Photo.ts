@@ -1,9 +1,11 @@
 import { Schema, model, Document } from "mongoose";
 
-const schema = new Schema({
+const Foto = new Schema({
     title: String,
     description: String,
     imagePath: String
+}, {
+    collection: 'fotos', timestamps: { createdAt: 'creado', updatedAt: 'actualizado' }
 })
 
 export interface IPhoto extends Document {
@@ -12,4 +14,4 @@ export interface IPhoto extends Document {
     imagePath: string
 }
 
-export default model<IPhoto>('Photo', schema);
+export default model<IPhoto>('Photo', Foto);

@@ -5,7 +5,8 @@ async function connect() {
         await mongoose.connect('mongodb://localhost:27017/base-server', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-            useFindAndModify: false 
+            useCreateIndex: true,
+            useFindAndModify: false
         });
         console.log('>>>Database connected')
     }
