@@ -1,14 +1,13 @@
 import { Router } from "express";
-import { signup, signin, profile } from "../controllers/auth";
+import {  profile, register, login } from "../controllers/auth";
 import { TokenValidation } from "../middleware/verifyToken";
 const router = Router();
 
-router.route('/signup')
-    .post(signup);
-router.route('/signin')
-    .post(signin);
-router.route('/profile')
-router.route('/profile')
+router.route('/register')
+    .post(register);
+router.route('/login')
+    .post(login);
+router.route('/user')
     .get(TokenValidation, profile);
 
 export default router;

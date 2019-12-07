@@ -4,6 +4,6 @@ import  photos from "./photo";
 import auths from "./auth";
 
 router.use('/photos', photos);
-router.use('/auth', auths);
+router.use('/', auths);
 
 export default router;
