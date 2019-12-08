@@ -3,8 +3,10 @@ import morgan from 'morgan';
 import cors from 'cors';
 import passport from 'passport';
 import path from 'path';
+import i18n from "../config/i18n";
 
 import indexRoutes from '../routes/index'
+
 class Server {
     public app: Application;
     constructor() {
@@ -16,8 +18,9 @@ class Server {
     settings(): void {
         this.app.set('port', process.env.PORT || 5000);
         this.app.use(passport.initialize());
-        this.app.use(passport.session())
+        this.app.use(passport.session());
         this.app.use('/uploads', express.static(path.resolve('uploads')));
+        this.app.use(i18n.init)
     }
     middlewares(): void {
         this.app.use(cors());

@@ -1,3 +1,6 @@
 node_modules
 uploads/
 dist/
+.env
+public/
+language/
