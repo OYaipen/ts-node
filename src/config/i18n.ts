@@ -4,8 +4,8 @@ import path from 'path';
 i18n.configure({
   locales: ['es', 'en'],
   directory: path.join(__dirname, '../../language'),
-  cookie: 'lang',
-  defaultLocale: 'es',
+  cookie: 'locale',
+  defaultLocale: 'en',
   directoryPermissions: '755',
   register: global,
   api: {

@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import passport from 'passport';
 import path from 'path';
+import cookieParser from 'cookie-parser';
 import i18n from "../config/i18n";
 
 import indexRoutes from '../routes/index'
@@ -21,6 +22,7 @@ class Server {
         this.app.use(passport.session());
         this.app.use('/uploads', express.static(path.resolve('uploads')));
         this.app.use(i18n.init)
+        this.app.use(cookieParser())
     }
     middlewares(): void {
         this.app.use(cors());
