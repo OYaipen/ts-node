@@ -5,7 +5,7 @@ i18n.configure({
   locales: ['es', 'en'],
   directory: path.join(__dirname, '../../language'),
   cookie: 'locale',
-  defaultLocale: 'en',
+  defaultLocale: 'es',
   directoryPermissions: '755',
   register: global,
   api: {

@@ -1,6 +1,5 @@
 node_modules
 uploads/
 dist/
+build/
 .env
-public/
-language/

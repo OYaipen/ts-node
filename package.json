@@ -4,9 +4,9 @@
   "description": "server node",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf dist/ uploads/",
+    "clean": "rimraf dist/ uploads/ build/",
     "build": "npm run clean && tsc",
-    "start": "npm run build && node dist/index.js",
+    "start": "npm run build && node build/index.js",
     "dev": "ts-node-dev --respawn --transpileOnly ./src/index.ts"
   },
   "author": "owen yaipen",

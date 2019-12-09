@@ -11,7 +11,7 @@ export async function register(req: Request, res: Response): Promise<Response> {
     const { username, email, password, active } = req.body;
     // find email
     const findEmail = await User.findOne({ email });
-    if (findEmail) return res.status(400).json(`${i18n.__('There is a user occupying this email:')} ${email}`);
+    if (findEmail) return res.status(400).json(`${i18n.__('There_is_a_user_occupying_this_email:')} ${email}`);
     try {
         // Saving User
         const newUser = { username, email, password, active }
@@ -35,10 +35,10 @@ export async function login(req: Request, res: Response) {
     const { email, password } = req.body;
     // validate user
     const user = await User.findOne({ email });
-    if (!user) return res.status(400).json(('Hello'));
+    if (!user) return res.status(400).json(i18n.__('Email_or_password_invalidate'));
     // Validate Password
     const correctPassword: boolean = await user.validatePassword(password);
-    if (!correctPassword) return res.status(400).json('invalid password');
+    if (!correctPassword) return res.status(400).json(i18n.__('invalid_password'));
     // Generate token
     const token: string = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET || 'tokentest', {
         expiresIn: 60 * 60 * 24
@@ -49,7 +49,7 @@ export async function login(req: Request, res: Response) {
 export async function profile(req: Request, res: Response) {
     const user = await User.findById(req.userId, { password: 0 });
     if (!user) {
-        return res.status(404).json('No User found');
+        return res.status(404).json(i18n.__h('No_User_found'));
     }
     res.json(user);
 };
