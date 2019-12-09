@@ -20,7 +20,7 @@ class Server {
         this.app.set('port', process.env.PORT || 5000);
         this.app.use(passport.initialize());
         this.app.use(passport.session());
-        // this.app.use(express.static(path.join(__dirname, '../../client/dist')));
+        this.app.use(express.static(path.join(__dirname, '../../dist')));
         this.app.use('/public', express.static(path.resolve('public')));
         this.app.use(i18n.init)
         this.app.use(cookieParser())
@@ -33,18 +33,19 @@ class Server {
     }
     routes(): void {
         this.app.use('/api', indexRoutes);
-        // this.// SPA
-        // app.get('/*', function (req, res) {
-        //   res.sendFile(path.join(__dirname, '../../client/dist/index.html'), (err) => {
-        //     if (err) {
-        //       res.status(500).send(err);
-        //     }
-        //   });
-        // });
+        this.// SPA
+        app.get('/*', function (req, res) {
+          res.sendFile(path.join(__dirname, '../../dist/index.html'), (err) => {
+            if (err) {
+              res.status(500).send(err);
+            }
+          });
+        });
     }
     start(): void {
         this.app.listen(this.app.get('port'), () => {
             console.log(`Server on port`, this.app.get('port'));
+            console.log(path.join(__dirname, '../../dist/index.html'))
         });
     }
 
