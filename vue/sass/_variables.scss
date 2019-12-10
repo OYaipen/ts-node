@@ -1,0 +1,67 @@
+// // Body
+$body-bg: #f7f9fb;
+
+// Cards
+$card-spacer-x: 0.9375rem;
+$card-spacer-y: 0.625rem;
+$card-cap-bg: #fbfbfb;
+$card-border-color: #e8eced;
+
+// Borders
+$border-radius: .125rem;
+$border-radius-lg: .2rem;
+$border-radius-sm: .15rem;
+
+// Nav Pills
+$nav-pills-border-radius: 0;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66d9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+
+.text-blue {
+    color: $blue;
+}
+.blue {
+    color: $blue;
+}
+.indigo {
+    color: $indigo;
+}
+.purple {
+    color: $purple;
+}
+.pink {
+    color: $pink;
+}
+.red {
+    color: $red;
+}
+.orange {
+    color: $orange;
+}
+.yellow {
+    color: $yellow;
+}
+.green {
+    color: $green;
+}
+.teal {
+    color: $teal;
+}
+.cyan {
+    color: $cyan;
+}

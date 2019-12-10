@@ -7,7 +7,7 @@ module.exports = {
     configureWebpack: {
         resolve: {
             alias: {
-                '~': __dirname + '/vue'
+                '~': __dirname + '/vue/'
             }
         },
         entry: {

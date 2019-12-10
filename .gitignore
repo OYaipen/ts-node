@@ -2,6 +2,8 @@ node_modules
 uploads/
 dist/
 build/
+server/
+client/
 .env
 .DS_Store
 # local env files
@@ -19,3 +21,4 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+notes.txt
