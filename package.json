@@ -8,7 +8,7 @@
     "watch": "vue-cli-service build --watch",
     "clean": "rimraf client/ uploads/ server/",
     "build": "npm run clean && tsc && vue-cli-service build",
-    "dev": "ts-node-dev --respawn --transpileOnly ./src/index.ts",
+    "dev": "ts-node-dev --respawn --transpileOnly ./api/index.ts",
     "start": "npm run build && node server/index.js"
   },
   "author": "owen yaipen",
