@@ -11,5 +11,5 @@ window.i18n = i18n;
 /* Axios client HTTP for the browser */
 window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
+/*  */
 

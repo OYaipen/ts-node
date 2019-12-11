@@ -6,9 +6,9 @@ import i18n from "../config/i18n"
 export async function register(req: Request, res: Response): Promise<Response> {
     // Validation
     const { error } = signupValidation(req.body);
-    if (error) return res.status(400).json(error.message);
+    if (error) return res.status(400).json(error);
 
-    const { username, email, password, active } = req.body;
+    const { username, email, password, active } = req.body.user;
     // find email
     const findEmail = await User.findOne({ email });
     if (findEmail) return res.status(400).json(`${i18n.__('There_is_a_user_occupying_this_email:')} ${email}`);

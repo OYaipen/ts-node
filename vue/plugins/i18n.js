@@ -1,3 +1,4 @@
+/* eslint-disable require-atomic-updates */
 import Vue from 'vue'
 import store from '~/store'
 import VueI18n from 'vue-i18n'
@@ -23,6 +24,7 @@ export async function loadMessages (locale) {
   }
 }
 
+// eslint-disable-next-line no-extra-semi
 ;(async function () {
   await loadMessages(store.getters['lang/locale'])
 })()

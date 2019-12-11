@@ -3,7 +3,6 @@ module.exports = {
         port: 3000
     },
     outputDir: './client',
-    lintOnSave: true,
     configureWebpack: {
         resolve: {
             alias: {
